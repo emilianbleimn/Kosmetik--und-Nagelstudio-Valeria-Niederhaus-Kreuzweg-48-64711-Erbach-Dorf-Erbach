@@ -1,0 +1,67 @@
+/* Zusatz-Styles für Impressum & Datenschutzerklärung */
+
+.legal-page { padding-top: 5.5rem; }
+.legal { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(4rem, 9vw, 7rem); }
+
+.legal-wrap { max-width: 46rem; }
+.legal-title { margin-bottom: 2.5rem; }
+
+.legal h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  line-height: 1.25;
+  margin-top: 2.75rem;
+  margin-bottom: .85rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+.legal h2:first-of-type { margin-top: 0; }
+
+.legal p { font-size: .95rem; line-height: 1.8; }
+.legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+  color: var(--ink-2);
+  font-size: .95rem;
+  line-height: 1.8;
+}
+.legal li { margin-bottom: .25rem; }
+
+.legal a {
+  color: var(--accent-ink);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.legal a:hover { color: var(--ink); }
+
+.legal code {
+  display: inline-block;
+  padding: .1rem .45rem;
+  background: var(--accent-soft);
+  border-radius: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .84em;
+  color: var(--accent-ink);
+}
+
+.legal-alert {
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 2.75rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--sand);
+  font-size: .89rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.legal-alert strong { color: var(--ink); }
+
+.legal-page .site-footer { padding-top: 0; }
+.legal-page .footer-base a {
+  color: rgba(251,249,246,.6);
+  border-bottom: 1px solid transparent;
+}
+.legal-page .footer-base a:hover { color: var(--porcelain); border-bottom-color: currentColor; }
