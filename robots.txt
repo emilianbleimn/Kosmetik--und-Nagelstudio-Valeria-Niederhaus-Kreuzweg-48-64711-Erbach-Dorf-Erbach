@@ -1,0 +1,5 @@
+# Vorschaufassung: Die Seite soll noch nicht in Suchmaschinen erscheinen.
+# VOR DEM ECHTEN LIVEGANG diese Datei auf "Allow: /" umstellen und in
+# index.html das robots-Meta-Tag auf "index, follow" zurücksetzen.
+User-agent: *
+Disallow: /

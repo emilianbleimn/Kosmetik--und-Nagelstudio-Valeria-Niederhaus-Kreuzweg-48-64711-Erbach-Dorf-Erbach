@@ -68,6 +68,7 @@ sollten von der Inhaberin bestätigt werden:
 | **Preise** | – | Bewusst nicht aufgeführt, da keine belastbaren Angaben vorlagen. Siehe unten. |
 | **Impressum** | `impressum.html` | Enthält Platzhalter `[…]` – zwingend ausfüllen. |
 | **Datenschutz** | `datenschutz.html` | Hosting-Anbieter und E-Mail-Adresse ergänzen. |
+| **Sichtbarkeit für Google** | `index.html` und `robots.txt` | Die Vorschau steht auf `noindex, nofollow` und `Disallow: /`, erscheint also nicht in Suchergebnissen. **Vor dem echten Livegang beides zurückstellen**, sonst findet Google die Seite nie. |
 | **Domain** | `index.html` | `www.kosmetik-niederhaus.de` ist ein Platzhalter in `canonical`, den Open-Graph-Tags und im JSON-LD. Durch die echte Domain ersetzen. |
 | **Produktnamen** | `index.html`, Abschnitt `#studio` | CNC Skincare und die Hollywood-Nails-Zertifizierung stammen von den Fotos aus dem Studio. Bitte bestätigen, dass beides weiterhin aktuell ist. |
 
