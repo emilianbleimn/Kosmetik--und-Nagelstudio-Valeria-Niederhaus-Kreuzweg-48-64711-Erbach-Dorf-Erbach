@@ -44,7 +44,20 @@
   html.is-loading, html.is-loading body { overflow: hidden; }
 </style>
 <noscript><style>.loader { display: none !important; }</style></noscript>
-<script>document.documentElement.classList.add('is-loading');</script>
+<script>
+  document.documentElement.classList.add('is-loading');
+
+  // Beim Öffnen und beim Neuladen soll die Seite immer ganz oben beginnen.
+  // Browser merken sich sonst die letzte Scrollposition und springen dorthin
+  // zurück – hinter der Ladevorschau sieht das aus wie ein Sprung mitten in
+  // die Seite. Ein Anker in der Adresse (z. B. #kontakt) wird aus demselben
+  // Grund entfernt, bevor der Browser ihn anspringen kann. Die Sprungmarken
+  // innerhalb der Seite funktionieren davon unberührt weiter.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+</script>
 
 <link rel="stylesheet" href="assets/css/style.css">
 </head>

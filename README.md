@@ -177,6 +177,27 @@ Drei Absicherungen verhindern, dass er die Seite je dauerhaft verdeckt:
 Die Dauer lässt sich in `assets/js/main.js` über `MINDESTDAUER` ändern; der
 Wert 0 schaltet die Mindestanzeige praktisch ab.
 
+### Seitenanfang beim Öffnen und Neuladen
+
+Die Seite beginnt immer oben. Browser merken sich sonst die letzte
+Scrollposition und springen beim Neuladen dorthin zurück – hinter der
+Ladevorschau wirkt das wie ein Sprung mitten in die Seite.
+
+Dafür sorgen zwei Zeilen im `<head>` von `index.html`:
+
+- `history.scrollRestoration = 'manual'` schaltet die Wiederherstellung ab
+- ein Anker in der Adresse (z. B. `#kontakt`, wie ihn der Termin-Button
+  hinterlässt) wird per `replaceState` entfernt, bevor der Browser ihn
+  anspringen kann
+
+Zusätzlich setzt `assets/js/main.js` die Position aktiv auf null, weil manche
+Browser erst nach dem Ladeende scrollen. Die Sprungmarken innerhalb der Seite
+sind davon unberührt und funktionieren wie zuvor.
+
+Soll ein Anker in der Adresse doch angesprungen werden – etwa um jemandem
+gezielt den Kontaktbereich zu schicken – genügt es, die `replaceState`-Zeile
+im `<head>` zu entfernen.
+
 ## Gestaltungsraster
 
 Farben und Maße stehen als Custom Properties in `:root` (`assets/css/style.css`)

@@ -12,6 +12,18 @@
      Mindestdauer, sonst blitzt sie bei schnellen Verbindungen nur kurz auf.
      Ein Zeitlimit sorgt dafür, dass ein hängendes Bild die Seite nie
      dauerhaft verdeckt.                                                     */
+  /* Ergänzt die Vorkehrung aus dem <head>: dort wird die Wiederherstellung
+     der Scrollposition abgeschaltet, hier wird sie zusätzlich aktiv auf den
+     Seitenanfang gesetzt – manche Browser scrollen erst nach dem Ladeende.  */
+  function nachObenSetzen() {
+    window.scrollTo(0, 0);
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+  }
+
+  nachObenSetzen();
+  window.addEventListener('load', nachObenSetzen);
+
   var loader = document.getElementById('loader');
   if (loader) {
     var MINDESTDAUER = reduceMotion ? 300 : 1400;
@@ -22,6 +34,7 @@
     var ausblenden = function () {
       if (erledigt) return;
       erledigt = true;
+      nachObenSetzen();
       loader.classList.add('is-done');
       document.documentElement.classList.remove('is-loading');
       // Nach der Überblendung ganz aus dem Dokument nehmen.
