@@ -1,33 +1,31 @@
 # Bildnachweise
 
-## Eigene Fotos des Studios
-
-Die folgenden Aufnahmen stammen vom Kosmetik- und Nagelstudio Valeria Niederhaus
-und wurden von der Inhaberin bereitgestellt. Die Rechte liegen beim Studio.
+Alle Fotos auf dieser Website stammen vom Kosmetik- und Nagelstudio Valeria
+Niederhaus und wurden von der Inhaberin bereitgestellt. Die Rechte liegen beim
+Studio. Fremdbilder werden nicht mehr verwendet.
 
 | Datei | Motiv | Verwendung |
 |---|---|---|
 | `assets/img/naegel-glitzer.webp` | Nagelmodellage mit schimmerndem Verlauf | Großes Bild ganz oben |
+| `assets/img/behandlungsraum.webp` | Behandlungsliege mit Lupenlampe | Leistung 01 – Gesichtsbehandlungen & Micro Needling |
 | `assets/img/naegel-nude.webp` | Nagelmodellage in Nudeton | Leistung 02 – Nageldesign |
 | `assets/img/augen-detail.webp` | Augenbraue, Wimpernkranz, Lidstrich | Leistung 03 – Augenbrauen & Wimpern |
 | `assets/img/permanent-make-up.webp` | Augenbrauen vorher / nachher | Leistung 04 – Permanent Make-up |
-| `assets/img/studio-innen.webp` | Behandlungsraum mit Zertifikaten | Abschnitt „Das Studio“ |
+| `assets/img/valeria-arbeit.webp` | Valeria Niederhaus bei einer PMU-Behandlung | Abschnitt „Das Studio“ |
+| `assets/img/studio-innen.webp` | Arbeitsplatz mit Zertifikaten | Galerie |
+| `assets/img/naegel-modellage.webp` | Modellage mit Schablone | Galerie |
+| `assets/img/naegel-lack.webp` | Auftragen von Farblack | Galerie |
+| `assets/img/naegel-rot.webp` | Fertige Modellage in Rot | Galerie |
 
-Bei allen fünf Dateien wurde unten ein schmaler Streifen abgeschnitten, auf dem
-die Pfeiltasten einer Bildergalerie mit abfotografiert waren.
+Bei allen Dateien wurde unten ein schmaler Streifen abgeschnitten, auf dem die
+Pfeiltasten einer Bildergalerie mit abfotografiert waren.
 
-## Noch ein Platzhalter
+## Hinweis zu Personenaufnahmen
 
-| Datei | Motiv | Quelle |
-|---|---|---|
-| `assets/img/gesichtsbehandlung.jpg` | Gesichtsbehandlung mit Maske | [Unsplash](https://unsplash.com/license), `photo-1616394584738-fc6e612e71b9` |
-
-Das ist das einzige verbliebene Fremdbild. Es steht bei Leistung 01
-(Gesichtsbehandlungen & Micro Needling) und ist per CSS leicht entsättigt, damit
-es farblich nicht aus der Reihe fällt. **Sobald ein eigenes Foto einer
-Gesichtsbehandlung oder einer Micro-Needling-Anwendung vorliegt, sollte es
-ersetzt werden** – danach kann in `assets/css/style.css` auch die Regel
-`.service-media.is-placeholder` entfallen.
+Auf mehreren Fotos sind Kundinnen zu erkennen. Die Bilder stammen aus dem
+öffentlichen Auftritt des Studios; vor der Veröffentlichung der Website sollte
+sichergestellt sein, dass für alle abgebildeten Personen eine Einwilligung zur
+Veröffentlichung vorliegt (Art. 6 Abs. 1 lit. a DSGVO, § 22 KunstUrhG).
 
 ## Schriften
 

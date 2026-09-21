@@ -23,9 +23,18 @@ ebenfalls, nur die Karte lädt dann unter Umständen nicht.
 
 ## Veröffentlichen
 
-Es reicht, den Ordnerinhalt auf einen Webspace zu kopieren. Getestete Wege:
+Die Seite wird über **GitHub Pages** automatisch veröffentlicht. Der Workflow
+`.github/workflows/pages.yml` läuft bei jedem Push auf den Standard-Branch und
+schaltet Pages beim ersten Lauf selbst frei. Öffentliche Adresse:
 
-- **GitHub Pages** – Repository-Einstellungen → Pages → Branch wählen, Ordner `/`
+    https://emilianbleimn.github.io/Kosmetik--und-Nagelstudio-Valeria-Niederhaus-Kreuzweg-48-64711-Erbach-Dorf-Erbach/
+
+Sobald eine eigene Domain vorliegt, lässt sie sich unter
+Repository → Settings → Pages → Custom domain eintragen. Danach bitte auch die
+Platzhalter-Domain in `index.html` ersetzen (siehe Tabelle oben).
+
+Alternativen ohne GitHub:
+
 - **Netlify / Cloudflare Pages** – Repository verbinden, kein Build-Befehl,
   Publish-Verzeichnis `/`
 - **Klassisches Webhosting** – alle Dateien per FTP in das Webverzeichnis laden
@@ -79,26 +88,16 @@ gewünscht ist, lässt sich pro Leistung eine Zeile ergänzen, z. B.:
 
 ## Fotos
 
-Fünf echte Studiofotos sind eingebunden (Nageldesign, Augenpartie, Permanent
-Make-up vorher/nachher, Behandlungsraum) – siehe `CREDITS.md`. Bei allen wurde
+Alle zehn Fotos stammen vom Studio selbst – siehe `CREDITS.md`. Bei jedem wurde
 unten ein schmaler Streifen abgeschnitten, auf dem die Pfeiltasten einer
-Bildergalerie mit abfotografiert waren.
+Bildergalerie mit abfotografiert waren. Fremdbilder werden nicht mehr verwendet.
 
-**Ein Platzhalter ist noch übrig:** `assets/img/gesichtsbehandlung.jpg` bei
-Leistung 01 (Gesichtsbehandlungen & Micro Needling) stammt von Unsplash. Ein
-eigenes Foto einer Gesichtsbehandlung oder Micro-Needling-Anwendung würde diesen
-Abschnitt deutlich aufwerten. Zum Austauschen genügt es, die Datei unter
-gleichem Namen zu ersetzen; danach kann in `assets/css/style.css` die Regel
-`.service-media.is-placeholder` entfallen, die das Fremdbild derzeit leicht
-entsättigt.
+Auf mehreren Aufnahmen sind Kundinnen erkennbar. Bitte vor dem Livegang
+sicherstellen, dass dafür Einwilligungen vorliegen.
 
-**Ein Porträt von Valeria fehlt weiterhin.** Der Abschnitt „Das Studio" zeigt
-aktuell den Behandlungsraum. Ein Foto der Inhaberin würde dort gut passen und
-dem Text – der von ihr in der ersten Person erzählt – ein Gesicht geben.
-
-Weitere Fotos lassen sich jederzeit ergänzen: Dateien nach `assets/img/` legen,
-im `index.html` referenzieren und einen `alt`-Text vergeben, der beschreibt, was
-zu sehen ist.
+Weitere Fotos lassen sich jederzeit ergänzen: Datei nach `assets/img/` legen, im
+`index.html` referenzieren und einen `alt`-Text vergeben, der beschreibt, was zu
+sehen ist. Für die Galerie genügt ein weiteres `<li>` im Abschnitt `#galerie`.
 
 ## Aufbau
 

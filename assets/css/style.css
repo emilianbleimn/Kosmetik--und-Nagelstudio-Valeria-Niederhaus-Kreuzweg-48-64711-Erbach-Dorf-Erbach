@@ -159,6 +159,10 @@ p + p { margin-top: 1.1rem; }
 }
 
 /* ---------- Layout ------------------------------------------------------- */
+/* Ohne diesen Versatz verschwindet die Überschrift eines angesprungenen
+   Abschnitts unter der festen Kopfzeile. */
+section[id] { scroll-margin-top: 5.5rem; }
+
 .wrap {
   width: min(var(--wrap), 100%);
   margin-inline: auto;
@@ -425,11 +429,6 @@ p + p { margin-top: 1.1rem; }
 /* Quadratisches Motiv – ein 4:3-Beschnitt würde die Augenbraue abschneiden. */
 .service-media.is-square img { aspect-ratio: 1 / 1; }
 
-/* Einziges verbliebenes Stockfoto – leicht entsättigt, damit es neben den
-   echten Studiofotos nicht aus der warmen Farbwelt fällt. Entfällt, sobald
-   ein eigenes Foto vorliegt. */
-.service-media.is-placeholder img { filter: saturate(.72) contrast(1.02); }
-
 /* Vorher-Nachher: muss vollständig sichtbar bleiben, daher kein Beschnitt. */
 .service-media.is-natural img { aspect-ratio: auto; object-fit: contain; background: var(--porcelain); }
 .service-media.is-natural { background: var(--porcelain); }
@@ -539,6 +538,25 @@ p + p { margin-top: 1.1rem; }
   color: var(--ink);
 }
 .quote figcaption span { font-weight: 400; color: var(--ink-3); }
+
+/* ---------- Galerie ------------------------------------------------------ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(.65rem, 1.4vw, 1.1rem);
+}
+.gallery li {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--linen);
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease);
+}
+.gallery li:hover img { transform: scale(1.05); }
 
 /* ---------- Gut zu wissen ------------------------------------------------ */
 .section-facts { background: var(--porcelain); }
@@ -732,6 +750,7 @@ p + p { margin-top: 1.1rem; }
   .service-flip .service-media { order: 0; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .facts { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
   .map-card { position: static; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
   .studio-media { max-width: 34rem; }

@@ -1,0 +1,41 @@
+name: Website veröffentlichen
+
+on:
+  push:
+    branches: ["claude/zealous-goodall-i9qg62"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Gleichzeitige Veröffentlichungen vermeiden, laufende aber zu Ende bringen.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Quellcode holen
+        uses: actions/checkout@v4
+
+      - name: GitHub Pages einrichten
+        uses: actions/configure-pages@v5
+        with:
+          # Schaltet Pages beim ersten Lauf selbst frei.
+          enablement: true
+
+      - name: Dateien hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

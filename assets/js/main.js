@@ -73,7 +73,7 @@
   }
 
   /* ---------- Aktiver Navigationspunkt ----------------------------------- */
-  var sections = ['leistungen', 'studio', 'stimmen', 'kontakt']
+  var sections = ['leistungen', 'studio', 'galerie', 'stimmen', 'kontakt']
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
   var navLinks = nav ? nav.querySelectorAll('a[href^="#"]') : [];
