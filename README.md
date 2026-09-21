@@ -40,11 +40,12 @@ sollten von der Inhaberin bestätigt werden:
 | Was | Wo | Anmerkung |
 |---|---|---|
 | **Öffnungszeiten** | `index.html`, Tabelle `#hoursTable` | Aktuell Mo–Fr 09:00–17:00, Sa/So geschlossen (Angabe aus Branchenverzeichnissen). Bitte prüfen. |
-| **Leistungsumfang** | `index.html`, Abschnitt `#leistungen` | Vier Bereiche, die sich aus Rezensionen und Verzeichnissen belegen ließen. Weitere Leistungen (z. B. Haarentfernung) ggf. ergänzen. |
+| **Leistungsumfang** | `index.html`, Abschnitt `#leistungen` | Vier Bereiche, belegt aus Rezensionen, Verzeichnissen und den Studiofotos (CNC-Skincare-Banner für Micro Needling, Hollywood-Nails-Zertifikate). Weitere Leistungen (z. B. Haarentfernung) ggf. ergänzen. |
 | **Preise** | – | Bewusst nicht aufgeführt, da keine belastbaren Angaben vorlagen. Siehe unten. |
 | **Impressum** | `impressum.html` | Enthält Platzhalter `[…]` – zwingend ausfüllen. |
 | **Datenschutz** | `datenschutz.html` | Hosting-Anbieter und E-Mail-Adresse ergänzen. |
 | **Domain** | `index.html` | `www.kosmetik-niederhaus.de` ist ein Platzhalter in `canonical`, den Open-Graph-Tags und im JSON-LD. Durch die echte Domain ersetzen. |
+| **Produktnamen** | `index.html`, Abschnitt `#studio` | CNC Skincare und die Hollywood-Nails-Zertifizierung stammen von den Fotos aus dem Studio. Bitte bestätigen, dass beides weiterhin aktuell ist. |
 
 > Ein unvollständiges Impressum ist in Deutschland abmahnfähig. Bitte vor der
 > Veröffentlichung ausfüllen und im Zweifel rechtlich prüfen lassen.
@@ -76,42 +77,28 @@ gewünscht ist, lässt sich pro Leistung eine Zeile ergänzen, z. B.:
 
 ---
 
-## Eigene Fotos einsetzen
+## Fotos
 
-**Die aktuell eingebundenen Bilder sind Platzhalter von Unsplash** (siehe
-`CREDITS.md`). Die Fotos aus dem Google-Unternehmensprofil konnten dafür nicht
-verwendet werden: Sie liegen auf Googles CDN hinter kurzlebigen, signierten URLs,
-das automatisierte Auslesen widerspricht den Nutzungsbedingungen von Google, und ein
-großer Teil der Galerie stammt von Kundinnen – die Bildrechte liegen dann bei diesen,
-nicht beim Studio.
+Fünf echte Studiofotos sind eingebunden (Nageldesign, Augenpartie, Permanent
+Make-up vorher/nachher, Behandlungsraum) – siehe `CREDITS.md`. Bei allen wurde
+unten ein schmaler Streifen abgeschnitten, auf dem die Pfeiltasten einer
+Bildergalerie mit abfotografiert waren.
 
-Der saubere Weg: die **Originaldateien** verwenden, die die Inhaberin selbst
-aufgenommen und bei Google hochgeladen hat. Diese Bilder gehören ihr und dürfen ohne
-Weiteres eingesetzt werden.
+**Ein Platzhalter ist noch übrig:** `assets/img/gesichtsbehandlung.jpg` bei
+Leistung 01 (Gesichtsbehandlungen & Micro Needling) stammt von Unsplash. Ein
+eigenes Foto einer Gesichtsbehandlung oder Micro-Needling-Anwendung würde diesen
+Abschnitt deutlich aufwerten. Zum Austauschen genügt es, die Datei unter
+gleichem Namen zu ersetzen; danach kann in `assets/css/style.css` die Regel
+`.service-media.is-placeholder` entfallen, die das Fremdbild derzeit leicht
+entsättigt.
 
-So werden sie eingesetzt — die Dateinamen einfach beibehalten, dann ist keine
-Code-Änderung nötig:
+**Ein Porträt von Valeria fehlt weiterhin.** Der Abschnitt „Das Studio" zeigt
+aktuell den Behandlungsraum. Ein Foto der Inhaberin würde dort gut passen und
+dem Text – der von ihr in der ersten Person erzählt – ein Gesicht geben.
 
-| Datei | Wo sie erscheint | Empfohlenes Format |
-|---|---|---|
-| `assets/img/hero.jpg` | Großes Bild ganz oben | quer, ca. 1800 × 1200 px |
-| `assets/img/hero-sm.jpg` | dasselbe Motiv für Mobilgeräte | ca. 900 × 1100 px |
-| `assets/img/behandlung.jpg` | Abschnitt „Das Studio“, großes Bogenbild | hoch, ca. 1100 × 1400 px |
-| `assets/img/naegel-detail.jpg` | kleines Bild daneben | quer, ca. 1100 × 800 px |
-| `assets/img/gesichtsbehandlung.jpg` | Leistung 01 | quer, ca. 1100 × 825 px |
-| `assets/img/nageldesign.jpg` | Leistung 02 | quer, ca. 1100 × 825 px |
-| `assets/img/augenbrauen.jpg` | Leistung 03 | quer, ca. 1100 × 825 px |
-| `assets/img/makeup.jpg` | Leistung 04 | quer, ca. 1100 × 825 px |
-
-Nach dem Austausch bitte die `alt`-Texte in `index.html` anpassen, damit sie
-beschreiben, was tatsächlich zu sehen ist, und `CREDITS.md` aktualisieren.
-
-**Ein Foto von Valeria selbst** fehlt bewusst: Ein Stockfoto einer fremden Person
-als Inhaberin auszugeben wäre irreführend. Ein echtes Porträt würde den Abschnitt
-„Das Studio“ deutlich aufwerten und lässt sich dort anstelle von
-`behandlung.jpg` einsetzen.
-
----
+Weitere Fotos lassen sich jederzeit ergänzen: Dateien nach `assets/img/` legen,
+im `index.html` referenzieren und einen `alt`-Text vergeben, der beschreibt, was
+zu sehen ist.
 
 ## Aufbau
 

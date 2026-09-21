@@ -1,23 +1,33 @@
 # Bildnachweise
 
-Alle aktuell eingebundenen Fotos stammen von [Unsplash](https://unsplash.com) und
-stehen unter der [Unsplash-Lizenz](https://unsplash.com/license). Diese erlaubt die
-kostenlose kommerzielle Nutzung ohne Namensnennung; eine Nennung ist erwünscht,
-aber nicht verpflichtend.
+## Eigene Fotos des Studios
 
-**Wichtig:** Es handelt sich um Platzhalter. Sobald eigene Studiofotos vorliegen,
-sollten diese Dateien ersetzt werden – siehe Abschnitt „Eigene Fotos einsetzen“ in
-der `README.md`.
+Die folgenden Aufnahmen stammen vom Kosmetik- und Nagelstudio Valeria Niederhaus
+und wurden von der Inhaberin bereitgestellt. Die Rechte liegen beim Studio.
+
+| Datei | Motiv | Verwendung |
+|---|---|---|
+| `assets/img/naegel-glitzer.webp` | Nagelmodellage mit schimmerndem Verlauf | Großes Bild ganz oben |
+| `assets/img/naegel-nude.webp` | Nagelmodellage in Nudeton | Leistung 02 – Nageldesign |
+| `assets/img/augen-detail.webp` | Augenbraue, Wimpernkranz, Lidstrich | Leistung 03 – Augenbrauen & Wimpern |
+| `assets/img/permanent-make-up.webp` | Augenbrauen vorher / nachher | Leistung 04 – Permanent Make-up |
+| `assets/img/studio-innen.webp` | Behandlungsraum mit Zertifikaten | Abschnitt „Das Studio“ |
+
+Bei allen fünf Dateien wurde unten ein schmaler Streifen abgeschnitten, auf dem
+die Pfeiltasten einer Bildergalerie mit abfotografiert waren.
+
+## Noch ein Platzhalter
 
 | Datei | Motiv | Quelle |
 |---|---|---|
-| `assets/img/hero.jpg`, `hero-sm.jpg` | Ruhiger Innenraum in warmen Naturtönen | `images.unsplash.com/photo-1507652313519-d4e9174996dd` |
-| `assets/img/behandlung.jpg` | Gesichtsbehandlung, Auftragen einer Maske | `images.unsplash.com/photo-1570172619644-dfd03ed5d881` |
-| `assets/img/gesichtsbehandlung.jpg` | Gesichtsbehandlung mit reinigender Maske | `images.unsplash.com/photo-1616394584738-fc6e612e71b9` |
-| `assets/img/nageldesign.jpg` | Maniküre am Arbeitsplatz | `images.unsplash.com/photo-1632345031435-8727f6897d53` |
-| `assets/img/augenbrauen.jpg` | Augenbrauenbehandlung | `images.unsplash.com/photo-1512290923902-8a9f81dc236c` |
-| `assets/img/makeup.jpg` | Make-up-Produkte und Pinsel | `images.unsplash.com/photo-1596462502278-27bfdc403348` |
-| `assets/img/naegel-detail.jpg` | Natürlich gestaltete Nägel | `images.unsplash.com/photo-1610992015732-2449b76344bc` |
+| `assets/img/gesichtsbehandlung.jpg` | Gesichtsbehandlung mit Maske | [Unsplash](https://unsplash.com/license), `photo-1616394584738-fc6e612e71b9` |
+
+Das ist das einzige verbliebene Fremdbild. Es steht bei Leistung 01
+(Gesichtsbehandlungen & Micro Needling) und ist per CSS leicht entsättigt, damit
+es farblich nicht aus der Reihe fällt. **Sobald ein eigenes Foto einer
+Gesichtsbehandlung oder einer Micro-Needling-Anwendung vorliegt, sollte es
+ersetzt werden** – danach kann in `assets/css/style.css` auch die Regel
+`.service-media.is-placeholder` entfallen.
 
 ## Schriften
 
