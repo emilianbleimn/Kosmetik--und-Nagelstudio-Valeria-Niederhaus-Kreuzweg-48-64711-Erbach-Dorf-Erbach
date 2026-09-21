@@ -129,6 +129,54 @@ assets/
 CREDITS.md            Bild- und Schriftnachweise
 ```
 
+## Logo
+
+Das Logo ist ein Bogen mit dem Monogramm VN – der Bogen greift die Form auf,
+die im Abschnitt „Das Studio" als Bildrahmen verwendet wird.
+
+Es ist **nicht** das Logo von CNC Skincare. Das CNC-Zeichen gehört der
+Produktlinie, mit der im Studio gearbeitet wird; als Kennzeichen der Website
+würde es den Eindruck erwecken, dies sei eine Seite von CNC.
+
+**Zum Austauschen** – etwa gegen ein eigenes Logo von Valeria Niederhaus – sind
+vier Stellen anzupassen. Die ersten drei enthalten denselben Block, ein
+Suchen-und-Ersetzen genügt:
+
+| Datei | Stelle |
+|---|---|
+| `index.html` | `<symbol id="vn-logo">` gleich nach `<body>` |
+| `impressum.html` | derselbe Block |
+| `datenschutz.html` | derselbe Block |
+| `assets/img/favicon.svg` | eigene Datei für den Browser-Tab |
+
+Die Ladevorschau in `index.html` hat eine eigene Kopie der Pfade
+(`.loader-mark`), weil dort jede Linie einzeln gezeichnet wird. Wird ein
+fertiges Logo eingesetzt, lässt sich die Animation dort auch einfach durch ein
+Einblenden ersetzen.
+
+Ein mitgeliefertes Logo als Bilddatei (SVG bevorzugt, sonst PNG mit
+transparentem Hintergrund) kommt nach `assets/img/` und ersetzt in der
+Kopfzeile das `<svg class="brand-mark">` durch ein `<img>`. Dabei ist zu
+beachten, dass die Kopfzeile über dem großen Bild hell und beim Scrollen
+dunkel ist – ein einfarbiges Logo in Weiß bzw. Dunkel braucht dann zwei
+Fassungen oder eine CSS-Maske.
+
+## Ladevorschau
+
+Beim Öffnen und bei jedem Neuladen erscheint kurz ein Vorhang mit dem Logo.
+Er blendet weg, sobald die Seite geladen ist, frühestens aber nach 1,4 s und
+spätestens nach 3,5 s.
+
+Drei Absicherungen verhindern, dass er die Seite je dauerhaft verdeckt:
+
+- die Höchstdauer im Skript (`HOECHSTDAUER` in `assets/js/main.js`)
+- eine CSS-Animation im `<head>`, die nach 4 s auch dann freigibt, wenn das
+  Skript gar nicht erst startet
+- ein `<noscript>`-Block, der den Vorhang ohne JavaScript ausblendet
+
+Die Dauer lässt sich in `assets/js/main.js` über `MINDESTDAUER` ändern; der
+Wert 0 schaltet die Mindestanzeige praktisch ab.
+
 ## Gestaltungsraster
 
 Farben und Maße stehen als Custom Properties in `:root` (`assets/css/style.css`)

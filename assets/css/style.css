@@ -90,6 +90,10 @@ address { font-style: normal; }
   border-radius: 2px;
 }
 
+/* Hält die Logo-Definition im Dokument, ohne sie anzuzeigen. display:none
+   würde <use> in manchen Browsern unbrauchbar machen. */
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
 .visually-hidden {
   position: absolute; width: 1px; height: 1px;
   padding: 0; margin: -1px; overflow: hidden;

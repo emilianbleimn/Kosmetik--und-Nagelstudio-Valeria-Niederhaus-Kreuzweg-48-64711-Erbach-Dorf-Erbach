@@ -12,16 +12,31 @@
 <link rel="stylesheet" href="assets/css/legal.css">
 </head>
 <body class="legal-page">
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     LOGO – einmal definiert, überall per <use href="#vn-logo"> eingebunden.
+     Zum Austauschen genügt es, die Pfade hier zu ersetzen (und dieselben
+     drei Zeilen in impressum.html und datenschutz.html sowie die Datei
+     assets/img/favicon.svg). Die Ladevorschau in index.html hat eine eigene
+     Kopie, weil dort jede Linie einzeln animiert wird.
+     ═══════════════════════════════════════════════════════════════════ -->
+<svg class="svg-sprite" aria-hidden="true" focusable="false"><symbol id="vn-logo" viewBox="0 0 48 48">
+  <path d="M8 43 V23 A16 16 0 0 1 40 23 V43" fill="none" stroke="currentColor" stroke-width=".9"/>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 17.5 L21 31.5" stroke-width="1.9"/>
+    <path d="M21 31.5 L27 17.5" stroke-width=".9"/>
+    <path d="M26.5 31.5 V17.5" stroke-width="1.75"/>
+    <path d="M26.5 17.5 L33.5 31.5" stroke-width=".9"/>
+    <path d="M33.5 31.5 V17.5" stroke-width="1.75"/>
+  </g>
+</symbol></svg>
+
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site-header is-solid">
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Zur Startseite">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <circle cx="24" cy="24" r="23" fill="none" stroke="currentColor" stroke-width="1"/>
-        <path d="M13 16.5 L20.5 32 L28 16.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M27 32 V19 L35 30 V17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg class="brand-mark" aria-hidden="true" focusable="false"><use href="#vn-logo"/></svg>
       <span class="brand-text">
         <span class="brand-name">Valeria Niederhaus</span>
         <span class="brand-sub">Kosmetik &amp; Nagelstudio</span>
