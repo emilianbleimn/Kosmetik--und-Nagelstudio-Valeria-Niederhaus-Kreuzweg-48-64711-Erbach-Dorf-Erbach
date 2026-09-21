@@ -23,15 +23,30 @@ ebenfalls, nur die Karte lädt dann unter Umständen nicht.
 
 ## Veröffentlichen
 
-Die Seite wird über **GitHub Pages** automatisch veröffentlicht. Der Workflow
-`.github/workflows/pages.yml` läuft bei jedem Push auf den Standard-Branch und
-schaltet Pages beim ersten Lauf selbst frei. Öffentliche Adresse:
+Die Seite wird über **GitHub Pages** veröffentlicht. Der Workflow
+`.github/workflows/pages.yml` liegt bereit und läuft bei jedem Push auf den
+Standard-Branch.
+
+**Einmalig nötig:** GitHub Pages muss im Repository freigeschaltet werden. Der
+Workflow kann das nicht selbst tun – der Actions-Token darf keine Pages-Seite
+anlegen (`Resource not accessible by integration`). Also von Hand:
+
+1. Repository → **Settings** → **Pages**
+2. Unter *Build and deployment* bei **Source** den Eintrag
+   **GitHub Actions** wählen
+
+Danach den Workflow einmal starten: Reiter **Actions** → *Website
+veröffentlichen* → **Run workflow**. Jeder weitere Push veröffentlicht dann
+automatisch. Die öffentliche Adresse lautet:
 
     https://emilianbleimn.github.io/Kosmetik--und-Nagelstudio-Valeria-Niederhaus-Kreuzweg-48-64711-Erbach-Dorf-Erbach/
 
-Sobald eine eigene Domain vorliegt, lässt sie sich unter
-Repository → Settings → Pages → Custom domain eintragen. Danach bitte auch die
-Platzhalter-Domain in `index.html` ersetzen (siehe Tabelle oben).
+Diese Adresse kann jede Person ohne Konto öffnen – sie eignet sich also zum
+Verschicken per E-Mail.
+
+Sobald eine eigene Domain vorliegt, lässt sie sich unter Settings → Pages →
+*Custom domain* eintragen. Danach bitte auch die Platzhalter-Domain in
+`index.html` ersetzen (siehe Tabelle oben).
 
 Alternativen ohne GitHub:
 
