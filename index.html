@@ -25,9 +25,48 @@
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add('js');</script>
+
+<!-- Ladevorschau: muss sofort sichtbar sein, also hier inline und nicht erst
+     aus style.css. Ohne JavaScript wird sie per <noscript> gar nicht gezeigt. -->
+<style>
+  .loader {
+    position: fixed; inset: 0; z-index: 9999;
+    display: grid; place-items: center;
+    background: #FBF9F6;
+    opacity: 1; visibility: visible;
+    transition: opacity .55s ease, visibility .55s ease;
+  }
+  .loader.is-done { opacity: 0; visibility: hidden; }
+  /* Sicherheitsnetz: Falls das Skript nie startet, gibt der Vorhang die Seite
+     nach 4 Sekunden von selbst frei. */
+  .loader { animation: loader-failsafe 0s linear 4s forwards; }
+  @keyframes loader-failsafe { to { opacity: 0; visibility: hidden; } }
+  html.is-loading, html.is-loading body { overflow: hidden; }
+</style>
+<noscript><style>.loader { display: none !important; }</style></noscript>
+<script>document.documentElement.classList.add('is-loading');</script>
+
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+<div class="loader" id="loader" role="presentation" aria-hidden="true">
+  <div class="loader-inner">
+    <svg class="loader-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+      <circle class="loader-ring" cx="24" cy="24" r="23" pathLength="1"
+              fill="none" stroke="currentColor" stroke-width="1"/>
+      <path class="loader-v" d="M13 16.5 L20.5 32 L28 16.5" pathLength="1"
+            fill="none" stroke="currentColor" stroke-width="1.4"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="loader-n" d="M27 32 V19 L35 30 V17" pathLength="1"
+            fill="none" stroke="currentColor" stroke-width="1.4"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <p class="loader-name">Valeria Niederhaus</p>
+    <p class="loader-sub">Kosmetik &amp; Nagelstudio</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 

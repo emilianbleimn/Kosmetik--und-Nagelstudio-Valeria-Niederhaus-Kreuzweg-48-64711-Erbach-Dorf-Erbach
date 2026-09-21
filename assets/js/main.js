@@ -7,6 +7,39 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Ladevorschau ausblenden ------------------------------------ */
+  /* Sie verschwindet, sobald die Seite geladen ist – aber nicht vor einer
+     Mindestdauer, sonst blitzt sie bei schnellen Verbindungen nur kurz auf.
+     Ein Zeitlimit sorgt dafür, dass ein hängendes Bild die Seite nie
+     dauerhaft verdeckt.                                                     */
+  var loader = document.getElementById('loader');
+  if (loader) {
+    var MINDESTDAUER = reduceMotion ? 300 : 1400;
+    var HOECHSTDAUER = 3500;
+    var start = Date.now();
+    var erledigt = false;
+
+    var ausblenden = function () {
+      if (erledigt) return;
+      erledigt = true;
+      loader.classList.add('is-done');
+      document.documentElement.classList.remove('is-loading');
+      // Nach der Überblendung ganz aus dem Dokument nehmen.
+      window.setTimeout(function () {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 700);
+    };
+
+    var planen = function () {
+      var rest = Math.max(0, MINDESTDAUER - (Date.now() - start));
+      window.setTimeout(ausblenden, rest);
+    };
+
+    if (document.readyState === 'complete') planen();
+    else window.addEventListener('load', planen);
+    window.setTimeout(ausblenden, HOECHSTDAUER);
+  }
+
   /* ---------- Jahreszahl im Footer -------------------------------------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

@@ -228,6 +228,88 @@ section[id] { scroll-margin-top: 5.5rem; }
 .link-arrow::after { content: '→'; transition: transform .25s var(--ease); }
 .link-arrow:hover { gap: .7rem; }
 
+/* ---------- Ladevorschau ------------------------------------------------- */
+/* Die Grundregeln stehen inline im <head>, damit der Vorhang schon vor dem
+   Laden dieser Datei steht. Hier folgt nur die Ausgestaltung.               */
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-inline: 1.5rem;
+}
+
+.loader-mark {
+  width: 74px; height: 74px;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+}
+.loader-ring, .loader-v, .loader-n {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: loader-draw .85s var(--ease) forwards;
+}
+.loader-ring { animation-delay: 0s; }
+.loader-v    { animation-delay: .28s; animation-duration: .5s; }
+.loader-n    { animation-delay: .46s; animation-duration: .5s; }
+@keyframes loader-draw { to { stroke-dashoffset: 0; } }
+
+.loader-name {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--ink);
+  margin: 0;
+  opacity: 0;
+  animation: loader-rise .7s var(--ease) .5s forwards;
+}
+.loader-sub {
+  font-size: .66rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: .5rem;
+  opacity: 0;
+  animation: loader-rise .7s var(--ease) .64s forwards;
+}
+@keyframes loader-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.loader-bar {
+  width: 112px; height: 1px;
+  margin-top: 2rem;
+  background: var(--line);
+  overflow: hidden;
+  opacity: 0;
+  animation: loader-rise .5s var(--ease) .8s forwards;
+}
+.loader-bar span {
+  display: block;
+  width: 100%; height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: loader-fill 1.5s var(--ease) .85s forwards;
+}
+@keyframes loader-fill {
+  0%   { transform: scaleX(0); }
+  70%  { transform: scaleX(.75); }
+  100% { transform: scaleX(1); }
+}
+
+/* Wer Bewegung reduziert haben möchte, bekommt den Vorhang ohne Animation. */
+@media (prefers-reduced-motion: reduce) {
+  .loader-ring, .loader-v, .loader-n {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .loader-name, .loader-sub, .loader-bar { opacity: 1; animation: none; }
+  .loader-bar span { transform: scaleX(1); animation: none; }
+}
+
 /* ---------- Header ------------------------------------------------------- */
 .site-header {
   position: fixed;
